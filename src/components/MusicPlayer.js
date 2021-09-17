@@ -193,7 +193,7 @@ export const MusicPlayer = () => {
             onClick={(event, value) => resetPlayHead(0)}
             aria-label='previous song'
           >
-            <FastRewindRounded fontSize='large' htmlColor={mainIconColor} />
+            <FastRewindRounded fontSize='medium' htmlColor={mainIconColor} />
           </IconButton>
           <IconButton
             aria-label={!playing ? 'play' : 'pause'}
@@ -201,22 +201,16 @@ export const MusicPlayer = () => {
             onClick={() => (!playing ? play() : pause())}
           >
             {!playing ? (
-              <PlayArrowRounded
-                sx={{ fontSize: '3rem' }}
-                htmlColor={mainIconColor}
-              />
+              <PlayArrowRounded fontSize='large' htmlColor={mainIconColor} />
             ) : (
-              <PauseRounded
-                sx={{ fontSize: '3rem' }}
-                htmlColor={mainIconColor}
-              />
+              <PauseRounded fontSize='large' htmlColor={mainIconColor} />
             )}
           </IconButton>
           <IconButton
             onClick={(event, value) => resetPlayHead(0)}
             aria-label='next song'
           >
-            <FastForwardRounded fontSize='large' htmlColor={mainIconColor} />
+            <FastForwardRounded fontSize='medium' htmlColor={mainIconColor} />
           </IconButton>
         </Box>
         <Stack
