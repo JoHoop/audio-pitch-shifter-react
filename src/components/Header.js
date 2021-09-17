@@ -29,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: '1.25rem',
   },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
 }));
 
 export const Header = () => {

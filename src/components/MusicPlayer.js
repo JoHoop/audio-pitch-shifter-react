@@ -23,6 +23,7 @@ const WallPaper = styled('div')({
   top: 0,
   left: 0,
   overflow: 'hidden',
+  zIndex: -1,
   background: 'linear-gradient(rgb(255, 38, 142) 0%, rgb(255, 105, 79) 100%)',
   transition: 'all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s',
   '&:before': {
