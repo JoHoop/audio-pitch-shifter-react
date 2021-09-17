@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
 import { Tooltip, IconButton, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const useStyles = makeStyles(() => ({
   iconButton: {
