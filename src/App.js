@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
-import { AudioPlayer } from './components/AudioPlayer';
+import { AudioWrapper } from './components/AudioWrapper';
 import { ThemeWrapper } from './theme/ThemeProvider';
 import { CssBaseline } from '@mui/material';
 
@@ -9,7 +9,7 @@ export const App = () => {
     <ThemeWrapper>
       <CssBaseline />
       <Header />
-      <AudioPlayer />
+      <AudioWrapper />
     </ThemeWrapper>
   );
 };
