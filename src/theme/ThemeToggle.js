@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
-import { IconButton, Zoom } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';

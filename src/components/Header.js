@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Zoom } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { ThemeToggle } from '../theme/ThemeToggle';
 import GitHubIcon from '@mui/icons-material/GitHub';
