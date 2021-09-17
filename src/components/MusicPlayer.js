@@ -61,19 +61,6 @@ const Widget = styled('div')(({ theme }) => ({
   backdropFilter: 'blur(40px)',
 }));
 
-const CoverImage = styled('div')({
-  width: 100,
-  height: 100,
-  objectFit: 'cover',
-  overflow: 'hidden',
-  flexShrink: 0,
-  borderRadius: 8,
-  backgroundColor: 'rgba(0,0,0,0.08)',
-  '& > img': {
-    width: '100%',
-  },
-});
-
 const TinyText = styled(Typography)({
   fontSize: '0.75rem',
   opacity: 0.38,
@@ -111,14 +98,6 @@ export const MusicPlayer = () => {
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <LoadButton />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <CoverImage>
-            <img
-              alt='Album cover'
-              src='/static/images/sliders/chilling-sunday.jpg'
-            />
-          </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
             <Typography
               variant='caption'

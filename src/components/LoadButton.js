@@ -1,10 +1,22 @@
 import React, { Fragment } from 'react';
-import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { usePlayer } from './PlayerContext';
 
 const Input = styled('input')({
   display: 'none',
+});
+
+const CoverImage = styled('div')({
+  width: 100,
+  height: 100,
+  objectFit: 'cover',
+  overflow: 'hidden',
+  flexShrink: 0,
+  borderRadius: 8,
+  backgroundColor: 'rgba(0,0,0,0.08)',
+  '& > img': {
+    width: '100%',
+  },
 });
 
 export const LoadButton = () => {
@@ -32,9 +44,9 @@ export const LoadButton = () => {
           onChange={onChange}
           id='upload-button'
         />
-        <Button variant='contained' component='span'>
-          Upload
-        </Button>
+        <CoverImage>
+          <img alt='Upload audio file' src='/static/images/cover.png' />
+        </CoverImage>
       </label>
     </Fragment>
   );
