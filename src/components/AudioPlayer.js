@@ -11,8 +11,6 @@ import PauseRounded from '@mui/icons-material/PauseRounded';
 import PlayArrowRounded from '@mui/icons-material/PlayArrowRounded';
 import FastForwardRounded from '@mui/icons-material/FastForwardRounded';
 import FastRewindRounded from '@mui/icons-material/FastRewindRounded';
-import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded';
-import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
 
 const WallPaper = styled('div')({
   position: 'absolute',
@@ -113,6 +111,7 @@ export const AudioPlayer = () => {
             </Typography>
           </Box>
         </Box>
+
         <Slider
           aria-label='time-indicator'
           size='small'
@@ -127,6 +126,8 @@ export const AudioPlayer = () => {
             '& .MuiSlider-thumb': {
               width: 8,
               height: 8,
+              color:
+                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -159,6 +160,7 @@ export const AudioPlayer = () => {
           <TinyText>{playHead}</TinyText>
           <TinyText>{duration}</TinyText>
         </Box>
+
         <Box
           sx={{
             display: 'flex',
@@ -171,7 +173,7 @@ export const AudioPlayer = () => {
             onClick={(event, value) => resetPlayHead(0)}
             aria-label='previous song'
           >
-            <FastRewindRounded fontSize='medium' htmlColor={mainIconColor} />
+            <FastRewindRounded fontSize='large' htmlColor={mainIconColor} />
           </IconButton>
           <IconButton
             aria-label={!playing ? 'play' : 'pause'}
@@ -188,152 +190,208 @@ export const AudioPlayer = () => {
             onClick={(event, value) => resetPlayHead(0)}
             aria-label='next song'
           >
-            <FastForwardRounded fontSize='medium' htmlColor={mainIconColor} />
+            <FastForwardRounded fontSize='large' htmlColor={mainIconColor} />
           </IconButton>
         </Box>
-        <Stack
-          spacing={2}
-          direction='row'
-          sx={{ mb: 1, px: 1 }}
-          alignItems='center'
-        >
-          <VolumeDownRounded htmlColor={lightIconColor} />
-          <Slider
-            aria-label='Volume'
-            value={volume}
-            onChange={changeVolume}
-            step={0.01}
-            min={0.0}
-            max={10.0}
-            sx={{
+
+        <Slider
+          aria-label='Volume'
+          size='small'
+          value={volume}
+          onChange={changeVolume}
+          step={0.01}
+          min={0.0}
+          max={3.0}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            height: 4,
+            '& .MuiSlider-thumb': {
+              width: 8,
+              height: 8,
               color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              '& .MuiSlider-track': {
-                border: 'none',
+                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
               },
-              '& .MuiSlider-thumb': {
-                width: 24,
-                height: 24,
-                backgroundColor: '#fff',
-                '&:before': {
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
-                },
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
-                },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                  theme.palette.mode === 'dark'
+                    ? 'rgb(255 255 255 / 16%)'
+                    : 'rgb(0 0 0 / 16%)'
+                }`,
               },
-            }}
-          />
-          <VolumeUpRounded htmlColor={lightIconColor} />
-        </Stack>
-        <Stack
-          spacing={2}
-          direction='row'
-          sx={{ mb: 1, px: 1 }}
-          alignItems='center'
+              '&.Mui-active': {
+                width: 20,
+                height: 20,
+              },
+            },
+            '& .MuiSlider-rail': {
+              opacity: 0.28,
+            },
+          }}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            mt: -2,
+          }}
         >
-          <VolumeDownRounded htmlColor={lightIconColor} />
-          <Slider
-            aria-label='Key'
-            value={semitone}
-            onChange={changeSemitone}
-            step={1}
-            min={-12}
-            max={12}
-            valueLabelDisplay='auto'
-            sx={{
+          <TinyText>Volume:</TinyText>
+          <TinyText>{Math.round(volume * 100)} %</TinyText>
+        </Box>
+
+        <Slider
+          aria-label='Key'
+          size='small'
+          value={semitone}
+          onChange={changeSemitone}
+          step={1}
+          min={-12}
+          max={12}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            height: 4,
+            '& .MuiSlider-thumb': {
+              width: 8,
+              height: 8,
               color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              '& .MuiSlider-track': {
-                border: 'none',
+                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
               },
-              '& .MuiSlider-thumb': {
-                width: 24,
-                height: 24,
-                backgroundColor: '#fff',
-                '&:before': {
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
-                },
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
-                },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                  theme.palette.mode === 'dark'
+                    ? 'rgb(255 255 255 / 16%)'
+                    : 'rgb(0 0 0 / 16%)'
+                }`,
               },
-            }}
-          />
-          <VolumeUpRounded htmlColor={lightIconColor} />
-        </Stack>
-        <Stack
-          spacing={2}
-          direction='row'
-          sx={{ mb: 1, px: 1 }}
-          alignItems='center'
+              '&.Mui-active': {
+                width: 20,
+                height: 20,
+              },
+            },
+            '& .MuiSlider-rail': {
+              opacity: 0.28,
+            },
+          }}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            mt: -2,
+          }}
         >
-          <VolumeDownRounded htmlColor={lightIconColor} />
-          <Slider
-            aria-label='Pitch'
-            value={pitch}
-            onChange={changePitch}
-            step={0.01}
-            min={0.1}
-            max={2.0}
-            valueLabelDisplay='auto'
-            sx={{
+          <TinyText>Key:</TinyText>
+          <TinyText>
+            {semitone >= 0 ? '+' : '-'}
+            {Math.abs(semitone)} semitones
+          </TinyText>
+        </Box>
+
+        <Slider
+          aria-label='Pitch'
+          size='small'
+          value={pitch}
+          onChange={changePitch}
+          step={0.01}
+          min={0.1}
+          max={2.0}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            height: 4,
+            '& .MuiSlider-thumb': {
+              width: 8,
+              height: 8,
               color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              '& .MuiSlider-track': {
-                border: 'none',
+                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
               },
-              '& .MuiSlider-thumb': {
-                width: 24,
-                height: 24,
-                backgroundColor: '#fff',
-                '&:before': {
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
-                },
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
-                },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                  theme.palette.mode === 'dark'
+                    ? 'rgb(255 255 255 / 16%)'
+                    : 'rgb(0 0 0 / 16%)'
+                }`,
               },
-            }}
-          />
-          <VolumeUpRounded htmlColor={lightIconColor} />
-        </Stack>
-        <Stack
-          spacing={2}
-          direction='row'
-          sx={{ mb: 1, px: 1 }}
-          alignItems='center'
+              '&.Mui-active': {
+                width: 20,
+                height: 20,
+              },
+            },
+            '& .MuiSlider-rail': {
+              opacity: 0.28,
+            },
+          }}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            mt: -2,
+          }}
         >
-          <VolumeDownRounded htmlColor={lightIconColor} />
-          <Slider
-            aria-label='Tempo'
-            value={tempo}
-            onChange={changeTempo}
-            step={0.01}
-            min={0.1}
-            max={4.0}
-            valueLabelDisplay='auto'
-            sx={{
+          <TinyText>Pitch:</TinyText>
+          <TinyText>{Math.round(pitch * 100)} %</TinyText>
+        </Box>
+
+        <Slider
+          aria-label='Tempo'
+          size='small'
+          value={tempo}
+          onChange={changeTempo}
+          step={0.01}
+          min={0.1}
+          max={4.0}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            height: 4,
+            '& .MuiSlider-thumb': {
+              width: 8,
+              height: 8,
               color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              '& .MuiSlider-track': {
-                border: 'none',
+                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
               },
-              '& .MuiSlider-thumb': {
-                width: 24,
-                height: 24,
-                backgroundColor: '#fff',
-                '&:before': {
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
-                },
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
-                },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                  theme.palette.mode === 'dark'
+                    ? 'rgb(255 255 255 / 16%)'
+                    : 'rgb(0 0 0 / 16%)'
+                }`,
               },
-            }}
-          />
-          <VolumeUpRounded htmlColor={lightIconColor} />
-        </Stack>
+              '&.Mui-active': {
+                width: 20,
+                height: 20,
+              },
+            },
+            '& .MuiSlider-rail': {
+              opacity: 0.28,
+            },
+          }}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            mt: -2,
+          }}
+        >
+          <TinyText>Tempo:</TinyText>
+          <TinyText>{Math.round(tempo * 100)} %</TinyText>
+        </Box>
       </Widget>
       <WallPaper />
     </Box>
