@@ -84,7 +84,7 @@ const TinyText = styled(Typography)({
 export const MusicPlayer = () => {
   const theme = useTheme();
 
-  const { loading, playing, pause, play } = usePlayer();
+  const { loading, playing, pause, play, fileName } = usePlayer();
   const {
     volume,
     semitone,
@@ -125,13 +125,13 @@ export const MusicPlayer = () => {
               color='text.secondary'
               fontWeight={500}
             >
-              Jun Pulse
+              Unknown author
             </Typography>
             <Typography noWrap>
-              <b>Can&apos;t win</b>
+              <b>{fileName}</b>
             </Typography>
             <Typography noWrap letterSpacing={-0.25}>
-              Chilling Sunday
+              Unkown album
             </Typography>
           </Box>
         </Box>

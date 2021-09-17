@@ -8,7 +8,7 @@ const Input = styled('input')({
 });
 
 export const LoadButton = () => {
-  const { loadFile } = usePlayer();
+  const { loadFile, setFileName } = usePlayer();
   const onChange = ({
     target: {
       files: [file],
@@ -17,6 +17,7 @@ export const LoadButton = () => {
   }) => {
     const fileTest = /(.mp3)$/i.test(value);
     if (fileTest) {
+      setFileName(file.name || 'Unknown title');
       loadFile(file);
     } else {
       window.alert('Please upload only files in .mp3 format');
