@@ -189,7 +189,10 @@ export const MusicPlayer = () => {
             mt: -1,
           }}
         >
-          <IconButton aria-label='previous song'>
+          <IconButton
+            onClick={(event, value) => resetPlayHead(0)}
+            aria-label='previous song'
+          >
             <FastRewindRounded fontSize='large' htmlColor={mainIconColor} />
           </IconButton>
           <IconButton
@@ -209,7 +212,10 @@ export const MusicPlayer = () => {
               />
             )}
           </IconButton>
-          <IconButton aria-label='next song'>
+          <IconButton
+            onClick={(event, value) => resetPlayHead(0)}
+            aria-label='next song'
+          >
             <FastForwardRounded fontSize='large' htmlColor={mainIconColor} />
           </IconButton>
         </Box>
