@@ -127,7 +127,7 @@ export const AudioPlayer = () => {
               width: 8,
               height: 8,
               color:
-                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -181,9 +181,15 @@ export const AudioPlayer = () => {
             onClick={() => (!playing ? play() : pause())}
           >
             {!playing ? (
-              <PlayArrowRounded fontSize='large' htmlColor={mainIconColor} />
+              <PlayArrowRounded
+                sx={{ fontSize: '3rem' }}
+                htmlColor={mainIconColor}
+              />
             ) : (
-              <PauseRounded fontSize='large' htmlColor={mainIconColor} />
+              <PauseRounded
+                sx={{ fontSize: '3rem' }}
+                htmlColor={mainIconColor}
+              />
             )}
           </IconButton>
           <IconButton
@@ -209,7 +215,7 @@ export const AudioPlayer = () => {
               width: 8,
               height: 8,
               color:
-                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -258,7 +264,7 @@ export const AudioPlayer = () => {
               width: 8,
               height: 8,
               color:
-                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -310,7 +316,7 @@ export const AudioPlayer = () => {
               width: 8,
               height: 8,
               color:
-                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
@@ -359,7 +365,7 @@ export const AudioPlayer = () => {
               width: 8,
               height: 8,
               color:
-                theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#fff',
+                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
