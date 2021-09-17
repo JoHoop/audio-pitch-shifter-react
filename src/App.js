@@ -1,13 +1,13 @@
 import React from 'react';
 import { Landing } from './pages/Landing';
-import { ThemeProvider } from './theme/ThemeProvider';
-import { CssBaseline } from '@material-ui/core';
+import { ThemeWrapper } from './theme/ThemeProvider';
+import { CssBaseline } from '@mui/material';
 
 export const App = () => {
   return (
-    <ThemeProvider>
+    <ThemeWrapper>
       <CssBaseline />
       <Landing />
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 };
