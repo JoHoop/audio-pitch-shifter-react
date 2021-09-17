@@ -115,7 +115,7 @@ export const MusicPlayer = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CoverImage>
             <img
-              alt="can't win - Chilling Sunday"
+              alt='Album cover'
               src='/static/images/sliders/chilling-sunday.jpg'
             />
           </CoverImage>

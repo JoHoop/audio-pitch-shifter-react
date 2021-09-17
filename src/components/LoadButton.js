@@ -1,5 +1,11 @@
 import React, { Fragment } from 'react';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 import { usePlayer } from './PlayerContext';
+
+const Input = styled('input')({
+  display: 'none',
+});
 
 export const LoadButton = () => {
   const { loadFile } = usePlayer();
@@ -13,13 +19,21 @@ export const LoadButton = () => {
     if (fileTest) {
       loadFile(file);
     } else {
-      window.alert('you can only load an mp3 file');
+      window.alert('Please upload only files in .mp3 format');
     }
   };
   return (
     <Fragment>
-      <label>
-        <input type='file' onChange={onChange} /> Load MP3
+      <label htmlFor='upload-button'>
+        <Input
+          type='file'
+          accept='audio/*'
+          onChange={onChange}
+          id='upload-button'
+        />
+        <Button variant='contained' component='span'>
+          Upload
+        </Button>
       </label>
     </Fragment>
   );
