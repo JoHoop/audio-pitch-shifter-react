@@ -10190,6 +10190,11 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+soundtouchjs@^0.1.27:
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/soundtouchjs/-/soundtouchjs-0.1.27.tgz#6d6df7c91d14c773b1e637be47dc9cec1dd3bb60"
+  integrity sha512-Ok/1U16sGDsOMD3ZOiXfojPzqYA/TO3ocNZyXQvTm8tIAQJaN4y0Tig4NlrvOVz8sMuIvp1dMH5xvGjXzNygww==
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
