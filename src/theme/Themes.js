@@ -1,13 +1,13 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 
-export const primary = "#00bfbf";
-export const black = "#111111";
-export const white = "#fafafa";
+export const primary = '#00bfbf';
+export const black = '#111111';
+export const white = '#fafafa';
 
 export const LightTheme = responsiveFontSizes(
   createMuiTheme({
     palette: {
-      type: "light",
+      type: 'light',
       primary: {
         main: primary,
       },
@@ -16,7 +16,7 @@ export const LightTheme = responsiveFontSizes(
     },
     overrides: {
       MuiCssBaseline: {
-        "@global": {
+        '@global': {
           body: {
             color: black,
             backgroundColor: white,
@@ -30,7 +30,7 @@ export const LightTheme = responsiveFontSizes(
 export const DarkTheme = responsiveFontSizes(
   createMuiTheme({
     palette: {
-      type: "dark",
+      type: 'dark',
       primary: {
         main: primary,
       },
@@ -39,7 +39,7 @@ export const DarkTheme = responsiveFontSizes(
     },
     overrides: {
       MuiCssBaseline: {
-        "@global": {
+        '@global': {
           body: {
             color: white,
             backgroundColor: black,
