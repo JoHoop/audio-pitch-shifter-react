@@ -1,13 +1,13 @@
 import React from 'react';
-import PlayButton from './PlayButton';
-import PauseButton from './PauseButton';
-import Progress from './Progress';
-import Tempo from './Tempo';
-import Pitch from './Pitch';
-import Key from './Key';
-import Volume from './Volume';
+import { PlayButton } from './PlayButton';
+import { PauseButton } from './PauseButton';
+import { Progress } from './Progress';
+import { Tempo } from './Tempo';
+import { Pitch } from './Pitch';
+import { Key } from './Key';
+import { Volume } from './Volume';
 
-const Player = () => {
+export const Player = () => {
   return (
     <div>
       <PlayButton />
@@ -20,5 +20,3 @@ const Player = () => {
     </div>
   );
 };
-
-export default Player;

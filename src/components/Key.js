@@ -1,47 +1,22 @@
 import React from 'react';
+import { Box, Slider } from '@material-ui/core';
 import { usePlayer } from './PlayerContext';
 
-const Key = () => {
+export const Key = () => {
   const { semitone, changeSemitone } = usePlayer();
 
   return (
-    <div>
-      <label htmlFor='keyrange'>
-        Change Key: {semitone / 2}
-        <div>
-          <input
-            onChange={changeSemitone}
-            type='range'
-            autoFocus
-            min='-7.0'
-            max='7.0'
-            name='keySlider'
-            value={semitone}
-            id='keySlider'
-            step='1'
-            list='keyrange'
-          />
-          <datalist id='keyrange'>
-            <option value='-7' />
-            <option value='-6' />
-            <option value='-5' />
-            <option value='-4' />
-            <option value='-3' />
-            <option value='-2' />
-            <option value='-1' />
-            <option value='0' />
-            <option value='1' />
-            <option value='2' />
-            <option value='3' />
-            <option value='4' />
-            <option value='5' />
-            <option value='6' />
-            <option value='7' />
-          </datalist>
-        </div>
-      </label>
-    </div>
+    <Box sx={{ width: 300 }}>
+      Key: {semitone}
+      <Slider
+        aria-label='Pitch'
+        value={semitone}
+        onChange={changeSemitone}
+        valueLabelDisplay='on'
+        step={1}
+        min={-7.0}
+        max={7.0}
+      />
+    </Box>
   );
 };
-
-export default Key;

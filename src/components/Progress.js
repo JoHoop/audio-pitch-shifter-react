@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePlayer } from './PlayerContext';
 
-const Progress = () => {
+export const Progress = () => {
   const { playHead, duration, progress, resetPlayHead } = usePlayer();
   const onClick = ({ target, pageX }) => {
     if (duration !== '0:00') {
@@ -25,5 +25,3 @@ const Progress = () => {
     </div>
   );
 };
-
-export default Progress;

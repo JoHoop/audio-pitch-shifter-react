@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePlayer } from './PlayerContext';
 
-const PlayButton = () => {
+export const PlayButton = () => {
   const { shifter, loading, playing, play } = usePlayer();
   return (
     <button disabled={!!!shifter || loading || playing} onClick={play}>
@@ -9,5 +9,3 @@ const PlayButton = () => {
     </button>
   );
 };
-
-export default PlayButton;

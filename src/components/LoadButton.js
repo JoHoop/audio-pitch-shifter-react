@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { usePlayer } from './PlayerContext';
 
-const LoadButton = () => {
+export const LoadButton = () => {
   const { loadFile } = usePlayer();
   const onChange = ({
     target: {
@@ -24,5 +24,3 @@ const LoadButton = () => {
     </Fragment>
   );
 };
-
-export default LoadButton;

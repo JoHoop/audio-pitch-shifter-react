@@ -178,23 +178,23 @@ export const usePlayer = () => {
     loadFile,
     play: playAudio,
     pause: pauseAudio,
-    changeVolume: ({ target: { value } }) => {
+    changeVolume: (event, value) => {
       setVolume(value);
       gainNode.gain.volume = value;
     },
-    changeSemitone: ({ target: { value } }) => {
+    changeSemitone: (event, value) => {
       setSemitone(value);
       if (shifter) {
         shifter.pitchSemitones = value;
       }
     },
-    changePitch: ({ target: { value } }) => {
+    changePitch: (event, value) => {
       setPitch(value);
       if (shifter) {
         shifter.pitch = value;
       }
     },
-    changeTempo: ({ target: { value } }) => {
+    changeTempo: (event, value) => {
       setTempo(value);
       if (shifter) {
         shifter.tempo = value;
