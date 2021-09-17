@@ -41,7 +41,7 @@ export const Header = () => {
           noWrap
           className={classes.toolbarTitle}
         >
-          React App
+          Audio Pitch Shifter
         </Typography>
         <nav>
           <ThemeToggle />
