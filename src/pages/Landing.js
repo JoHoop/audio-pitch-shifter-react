@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
 import { AudioPlayer } from '../components/AudioPlayer';
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,7 +25,6 @@ export const Landing = () => {
       <Container maxWidth='md' component='main' className={classes.main}>
         <AudioPlayer />
       </Container>
-      <Footer />
     </div>
   );
 };

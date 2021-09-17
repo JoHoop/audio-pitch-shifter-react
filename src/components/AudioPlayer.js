@@ -1,7 +1,8 @@
 import React from 'react';
 import { PlayerProvider } from './PlayerContext';
 import { LoadButton } from './LoadButton';
-import { Player } from './Player';
+// import { Player } from './Player';
+import { MusicPlayer } from './MusicPlayer';
 
 export const AudioPlayer = () => {
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -10,7 +11,7 @@ export const AudioPlayer = () => {
   return (
     <PlayerProvider {...{ audioCtx, gainNode }}>
       <LoadButton />
-      <Player />
+      <MusicPlayer />
     </PlayerProvider>
   );
 };

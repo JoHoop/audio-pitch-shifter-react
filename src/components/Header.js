@@ -14,7 +14,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const useStyles = makeStyles((theme) => ({
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    backgroundColor: theme.palette.background,
+    backgroundColor: 'transparent',
   },
   toolbar: {
     flexWrap: 'wrap',
