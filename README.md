@@ -2,7 +2,7 @@
 
 ### 🎚️ React Web App to change the pitch and speed of audio files using [SoundTouchJS](https://github.com/cutterbl/SoundTouchJS)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using [Material UI](https://mui.com) components. [View demo](https://vercel.com/johoop/audio-pitch-shifter-react) deployed at [Vercel](https://vercel.com/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using [Material UI](https://mui.com) components. [View demo](https://audio-pitch-shifter-react.vercel.app) deployed at [Vercel](https://vercel.com/).
 
 ## Available Scripts
 
