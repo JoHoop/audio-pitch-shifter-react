@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Tooltip,
-  IconButton,
-  Zoom,
-} from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { ThemeToggle } from '../theme/ThemeToggle';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -52,22 +45,17 @@ export const Header = () => {
         </Typography>
         <nav>
           <ThemeToggle />
-          <Tooltip
-            title={'GitHub repo'}
-            placement='bottom'
-            TransitionComponent={Zoom}
+
+          <IconButton
+            color='inherit'
+            aria-label={'GitHub Repo'}
+            className={classes.iconButton}
+            href='https://github.com/JoHoop/material-ui-react-starter'
+            target='_blank'
+            rel='noreferrer'
           >
-            <IconButton
-              color='inherit'
-              aria-label={'GitHub Repo'}
-              className={classes.iconButton}
-              href='https://github.com/JoHoop/material-ui-react-starter'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <GitHubIcon className={classes.icon} />
-            </IconButton>
-          </Tooltip>
+            <GitHubIcon className={classes.icon} />
+          </IconButton>
         </nav>
       </Toolbar>
     </AppBar>

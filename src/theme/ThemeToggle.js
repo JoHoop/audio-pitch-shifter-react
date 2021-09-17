@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
-import { Tooltip, IconButton, Zoom } from '@mui/material';
+import { IconButton, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
@@ -20,23 +20,17 @@ export const ThemeToggle = () => {
   const classes = useStyles();
 
   return (
-    <Tooltip
-      title={'Toggle theme'}
-      placement='bottom'
-      TransitionComponent={Zoom}
+    <IconButton
+      color='inherit'
+      onClick={toggleTheme}
+      aria-label={'Toggle theme'}
+      className={classes.iconButton}
     >
-      <IconButton
-        color='inherit'
-        onClick={toggleTheme}
-        aria-label={'Toggle theme'}
-        className={classes.iconButton}
-      >
-        {theme === 'light' ? (
-          <Brightness7Icon className={classes.icon} />
-        ) : (
-          <Brightness4Icon className={classes.icon} />
-        )}
-      </IconButton>
-    </Tooltip>
+      {theme === 'light' ? (
+        <Brightness7Icon className={classes.icon} />
+      ) : (
+        <Brightness4Icon className={classes.icon} />
+      )}
+    </IconButton>
   );
 };
