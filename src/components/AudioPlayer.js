@@ -205,6 +205,8 @@ export const AudioPlayer = () => {
           step={0.01}
           min={0.0}
           max={3.0}
+          marks={[{ value: 1.0 }]}
+          track={false}
           sx={{
             color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
             height: 4,
@@ -231,6 +233,13 @@ export const AudioPlayer = () => {
             },
             '& .MuiSlider-rail': {
               opacity: 0.28,
+            },
+            '& .MuiSlider-mark': {
+              height: 8,
+              '&.MuiSlider-markActive': {
+                backgroundColor:
+                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+              },
             },
           }}
         />
@@ -254,6 +263,8 @@ export const AudioPlayer = () => {
           step={1}
           min={-12}
           max={12}
+          marks={[{ value: 0 }]}
+          track={false}
           sx={{
             color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
             height: 4,
@@ -280,6 +291,13 @@ export const AudioPlayer = () => {
             },
             '& .MuiSlider-rail': {
               opacity: 0.28,
+            },
+            '& .MuiSlider-mark': {
+              height: 8,
+              '&.MuiSlider-markActive': {
+                backgroundColor:
+                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+              },
             },
           }}
         />
@@ -304,8 +322,10 @@ export const AudioPlayer = () => {
           value={pitch}
           onChange={changePitch}
           step={0.01}
-          min={0.1}
+          min={0.5}
           max={2.0}
+          marks={[{ value: 1.0 }]}
+          track={false}
           sx={{
             color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
             height: 4,
@@ -332,6 +352,13 @@ export const AudioPlayer = () => {
             },
             '& .MuiSlider-rail': {
               opacity: 0.28,
+            },
+            '& .MuiSlider-mark': {
+              height: 8,
+              '&.MuiSlider-markActive': {
+                backgroundColor:
+                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+              },
             },
           }}
         />
@@ -344,7 +371,10 @@ export const AudioPlayer = () => {
           }}
         >
           <TinyText>Pitch:</TinyText>
-          <TinyText>{Math.round(pitch * 100)} %</TinyText>
+          <TinyText>
+            {pitch >= 1.0 ? '+' : '-'}
+            {Math.abs(100 - Math.round(pitch * 100))} %
+          </TinyText>
         </Box>
 
         <Slider
@@ -353,8 +383,10 @@ export const AudioPlayer = () => {
           value={tempo}
           onChange={changeTempo}
           step={0.01}
-          min={0.1}
-          max={4.0}
+          min={0.3}
+          max={2.0}
+          marks={[{ value: 1.0 }]}
+          track={false}
           sx={{
             color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
             height: 4,
@@ -382,6 +414,13 @@ export const AudioPlayer = () => {
             '& .MuiSlider-rail': {
               opacity: 0.28,
             },
+            '& .MuiSlider-mark': {
+              height: 8,
+              '&.MuiSlider-markActive': {
+                backgroundColor:
+                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+              },
+            },
           }}
         />
         <Box
@@ -393,7 +432,10 @@ export const AudioPlayer = () => {
           }}
         >
           <TinyText>Tempo:</TinyText>
-          <TinyText>{Math.round(tempo * 100)} %</TinyText>
+          <TinyText>
+            {tempo >= 1.0 ? '+' : '-'}
+            {Math.abs(100 - Math.round(tempo * 100))} %
+          </TinyText>
         </Box>
       </Widget>
       <WallPaper />
