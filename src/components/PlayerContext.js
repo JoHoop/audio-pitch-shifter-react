@@ -14,7 +14,7 @@ export const PlayerProvider = ({ audioCtx, gainNode, ...props }) => {
   const [duration, setDuration] = useState('0:00');
   const [progress, setProgress] = useState(0);
   const [shifter, setShifter] = useState();
-  const [fileName, setFileName] = useState('Unknown title');
+  const [fileTags, setFileTags] = useState('Unknown title');
 
   const value = useMemo(
     () => ({
@@ -40,8 +40,8 @@ export const PlayerProvider = ({ audioCtx, gainNode, ...props }) => {
       gainNode,
       shifter,
       setShifter,
-      fileName,
-      setFileName,
+      fileTags,
+      setFileTags,
     }),
     [
       loading,
@@ -66,8 +66,8 @@ export const PlayerProvider = ({ audioCtx, gainNode, ...props }) => {
       gainNode,
       shifter,
       setShifter,
-      fileName,
-      setFileName,
+      fileTags,
+      setFileTags,
     ]
   );
 
@@ -98,8 +98,8 @@ export const usePlayer = () => {
     gainNode,
     shifter,
     setShifter,
-    fileName,
-    setFileName,
+    fileTags,
+    setFileTags,
   } = useContext(PlayerContext);
 
   const onPlay = ({ formattedTimePlayed, percentagePlayed }) => {
@@ -209,7 +209,7 @@ export const usePlayer = () => {
     },
     resetPlayHead,
     shifter,
-    fileName,
-    setFileName,
+    fileTags,
+    setFileTags,
   };
 };

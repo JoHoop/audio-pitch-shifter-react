@@ -67,7 +67,7 @@ const TinyText = styled(Typography)({
 export const AudioPlayer = () => {
   const theme = useTheme();
 
-  const { loading, playing, pause, play, fileName } = usePlayer();
+  const { loading, playing, pause, play, fileTags } = usePlayer();
   const {
     volume,
     semitone,
@@ -98,13 +98,13 @@ export const AudioPlayer = () => {
               color='text.secondary'
               fontWeight={500}
             >
-              Unknown author
+              {fileTags.artist}
             </Typography>
             <Typography noWrap>
-              <b>{fileName}</b>
+              <b>{fileTags.title}</b>
             </Typography>
             <Typography noWrap letterSpacing={-0.25}>
-              Unkown album
+              {fileTags.album}, {fileTags.year}
             </Typography>
           </Box>
         </Box>

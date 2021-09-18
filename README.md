@@ -1,6 +1,6 @@
 # Audio Pitch Shifter React
 
-### 🎚️ React Web App to change the pitch and speed of audio files using [SoundTouchJS](https://github.com/cutterbl/SoundTouchJS)
+### 🎚️ React Web App to change the pitch and speed of audio files using [SoundTouchJS](https://github.com/cutterbl/SoundTouchJS) and [id3.js](https://github.com/43081j/id3)
 
 ![Screenshot](/public/preview.png)
 

@@ -5794,6 +5794,11 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
+id3js@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/id3js/-/id3js-2.1.1.tgz#0c307d0d2f194bc5fa7a809bbed0b1a93577f16d"
+  integrity sha512-9Gi+sG0RHSa5qn8hkwi2KCl+2jV8YrtiZidXbOO3uLfRAxc2jilRg0fiQ3CbeoAmR7G7ap3RVs1kqUVhIyZaog==
+
 identity-obj-proxy@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz#94d2bda96084453ef36fbc5aaec37e0f79f1fc14"
