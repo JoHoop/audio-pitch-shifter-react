@@ -14,7 +14,12 @@ export const PlayerProvider = ({ audioCtx, gainNode, ...props }) => {
   const [duration, setDuration] = useState('0:00');
   const [progress, setProgress] = useState(0);
   const [shifter, setShifter] = useState();
-  const [fileTags, setFileTags] = useState('Unknown title');
+  const [fileTags, setFileTags] = useState({
+    title: 'Title',
+    artist: 'Artist',
+    album: 'Album',
+    year: 'Year',
+  });
 
   const value = useMemo(
     () => ({

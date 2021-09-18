@@ -104,7 +104,7 @@ export const AudioPlayer = () => {
               <b>{fileTags.title}</b>
             </Typography>
             <Typography noWrap letterSpacing={-0.25}>
-              {fileTags.album}, {fileTags.year}
+              {fileTags.album} ({fileTags.year})
             </Typography>
           </Box>
         </Box>

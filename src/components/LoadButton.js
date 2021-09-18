@@ -35,15 +35,14 @@ export const LoadButton = () => {
       id3
         .fromFile(file)
         .then((tags) => {
-          console.log(tags);
-          const title = tags.title || 'Unknown title';
-          const artist = tags.artist || 'Unknown artist';
-          const album = tags.album || 'Unknown album';
-          const year = tags.year || 'Unknown year';
+          const title = tags.title || 'Title';
+          const artist = tags.artist || 'Artist';
+          const album = tags.album || 'Album';
+          const year = tags.year || 'Year';
           const image = tags.images[0];
           if (image && image.data) {
             const blob = new Blob([image.data]);
-            const url = URL.createObjectURL(blob);
+            const url = URL.createObjectURL(blob) || '/logo512.png';
             setCover(url);
           }
           const fileTags = { title, artist, album, year };
@@ -51,7 +50,7 @@ export const LoadButton = () => {
         })
         .catch((error) => {});
     } else {
-      window.alert('Please upload only files in .mp3 format');
+      window.alert('Please upload files in .mp3 format only');
     }
   };
   return (
