@@ -50,7 +50,7 @@ export const Header = () => {
             color='inherit'
             aria-label={'GitHub Repo'}
             className={classes.iconButton}
-            href='https://github.com/JoHoop/material-ui-react-starter'
+            href='https://github.com/JoHoop/audio-pitch-shifter-react'
             target='_blank'
             rel='noreferrer'
           >
