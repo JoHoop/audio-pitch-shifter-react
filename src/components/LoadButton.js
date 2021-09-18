@@ -14,15 +14,23 @@ const CoverImage = styled('div')({
   overflow: 'hidden',
   flexShrink: 0,
   borderRadius: 8,
+  position: 'relative',
   backgroundColor: 'rgba(0,0,0,0.08)',
   '& > img': {
-    width: '100%',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    margin: 'auto',
   },
 });
 
 export const LoadButton = () => {
   const { loadFile, setFileTags } = usePlayer();
-  const [cover, setCover] = useState('/logo512.png');
+  const [cover, setCover] = useState('/logo.svg');
   const onChange = ({
     target: {
       files: [file],
