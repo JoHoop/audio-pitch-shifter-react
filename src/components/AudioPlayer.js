@@ -85,6 +85,41 @@ export const AudioPlayer = () => {
     }
   };
 
+  const sliderStyle = {
+    color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+    height: 4,
+    '& .MuiSlider-thumb': {
+      width: 8,
+      height: 8,
+      color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+      transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+      '&:before': {
+        boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+      },
+      '&:hover, &.Mui-focusVisible': {
+        boxShadow: `0px 0px 0px 8px ${
+          theme.palette.mode === 'dark'
+            ? 'rgb(255 255 255 / 16%)'
+            : 'rgb(0 0 0 / 16%)'
+        }`,
+      },
+      '&.Mui-active': {
+        width: 20,
+        height: 20,
+      },
+    },
+    '& .MuiSlider-rail': {
+      opacity: 0.28,
+    },
+    '& .MuiSlider-mark': {
+      height: 8,
+      '&.MuiSlider-markActive': {
+        backgroundColor:
+          theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+      },
+    },
+  };
+
   const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
 
   return (
@@ -117,34 +152,7 @@ export const AudioPlayer = () => {
           step={1}
           max={100}
           onChange={onClick}
-          sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-            height: 4,
-            '& .MuiSlider-thumb': {
-              width: 8,
-              height: 8,
-              color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-              '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-              },
-              '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
-                    ? 'rgb(255 255 255 / 16%)'
-                    : 'rgb(0 0 0 / 16%)'
-                }`,
-              },
-              '&.Mui-active': {
-                width: 20,
-                height: 20,
-              },
-            },
-            '& .MuiSlider-rail': {
-              opacity: 0.28,
-            },
-          }}
+          sx={sliderStyle}
         />
         <Box
           sx={{
@@ -207,41 +215,7 @@ export const AudioPlayer = () => {
           max={3.0}
           marks={[{ value: 1.0 }]}
           track={false}
-          sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-            height: 4,
-            '& .MuiSlider-thumb': {
-              width: 8,
-              height: 8,
-              color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-              '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-              },
-              '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
-                    ? 'rgb(255 255 255 / 16%)'
-                    : 'rgb(0 0 0 / 16%)'
-                }`,
-              },
-              '&.Mui-active': {
-                width: 20,
-                height: 20,
-              },
-            },
-            '& .MuiSlider-rail': {
-              opacity: 0.28,
-            },
-            '& .MuiSlider-mark': {
-              height: 8,
-              '&.MuiSlider-markActive': {
-                backgroundColor:
-                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              },
-            },
-          }}
+          sx={sliderStyle}
         />
         <Box
           sx={{
@@ -265,41 +239,7 @@ export const AudioPlayer = () => {
           max={12}
           marks={[{ value: 0 }]}
           track={false}
-          sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-            height: 4,
-            '& .MuiSlider-thumb': {
-              width: 8,
-              height: 8,
-              color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-              '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-              },
-              '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
-                    ? 'rgb(255 255 255 / 16%)'
-                    : 'rgb(0 0 0 / 16%)'
-                }`,
-              },
-              '&.Mui-active': {
-                width: 20,
-                height: 20,
-              },
-            },
-            '& .MuiSlider-rail': {
-              opacity: 0.28,
-            },
-            '& .MuiSlider-mark': {
-              height: 8,
-              '&.MuiSlider-markActive': {
-                backgroundColor:
-                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              },
-            },
-          }}
+          sx={sliderStyle}
         />
         <Box
           sx={{
@@ -326,41 +266,7 @@ export const AudioPlayer = () => {
           max={2.0}
           marks={[{ value: 1.0 }]}
           track={false}
-          sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-            height: 4,
-            '& .MuiSlider-thumb': {
-              width: 8,
-              height: 8,
-              color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-              '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-              },
-              '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
-                    ? 'rgb(255 255 255 / 16%)'
-                    : 'rgb(0 0 0 / 16%)'
-                }`,
-              },
-              '&.Mui-active': {
-                width: 20,
-                height: 20,
-              },
-            },
-            '& .MuiSlider-rail': {
-              opacity: 0.28,
-            },
-            '& .MuiSlider-mark': {
-              height: 8,
-              '&.MuiSlider-markActive': {
-                backgroundColor:
-                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              },
-            },
-          }}
+          sx={sliderStyle}
         />
         <Box
           sx={{
@@ -387,41 +293,7 @@ export const AudioPlayer = () => {
           max={2.0}
           marks={[{ value: 1.0 }]}
           track={false}
-          sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-            height: 4,
-            '& .MuiSlider-thumb': {
-              width: 8,
-              height: 8,
-              color:
-                theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-              '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-              },
-              '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
-                    ? 'rgb(255 255 255 / 16%)'
-                    : 'rgb(0 0 0 / 16%)'
-                }`,
-              },
-              '&.Mui-active': {
-                width: 20,
-                height: 20,
-              },
-            },
-            '& .MuiSlider-rail': {
-              opacity: 0.28,
-            },
-            '& .MuiSlider-mark': {
-              height: 8,
-              '&.MuiSlider-markActive': {
-                backgroundColor:
-                  theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-              },
-            },
-          }}
+          sx={sliderStyle}
         />
         <Box
           sx={{
