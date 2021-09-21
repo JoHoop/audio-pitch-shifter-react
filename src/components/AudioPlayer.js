@@ -120,6 +120,13 @@ export const AudioPlayer = () => {
     },
   };
 
+  const boxStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    mt: -2,
+  };
+
   const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
 
   return (
@@ -154,14 +161,7 @@ export const AudioPlayer = () => {
           onChange={onClick}
           sx={sliderStyle}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            mt: -2,
-          }}
-        >
+        <Box sx={boxStyle}>
           <TinyText>{playHead}</TinyText>
           <TinyText>{duration}</TinyText>
         </Box>
@@ -217,14 +217,7 @@ export const AudioPlayer = () => {
           track={false}
           sx={sliderStyle}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            mt: -2,
-          }}
-        >
+        <Box sx={boxStyle}>
           <TinyText>Volume:</TinyText>
           <TinyText>{Math.round(volume * 100)} %</TinyText>
         </Box>
@@ -241,14 +234,7 @@ export const AudioPlayer = () => {
           track={false}
           sx={sliderStyle}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            mt: -2,
-          }}
-        >
+        <Box sx={boxStyle}>
           <TinyText>Key:</TinyText>
           <TinyText>
             {semitone >= 0 ? '+' : '-'}
@@ -268,14 +254,7 @@ export const AudioPlayer = () => {
           track={false}
           sx={sliderStyle}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            mt: -2,
-          }}
-        >
+        <Box sx={boxStyle}>
           <TinyText>Pitch:</TinyText>
           <TinyText>
             {pitch >= 1.0 ? '+' : '-'}
@@ -295,14 +274,7 @@ export const AudioPlayer = () => {
           track={false}
           sx={sliderStyle}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            mt: -2,
-          }}
-        >
+        <Box sx={boxStyle}>
           <TinyText>Tempo:</TinyText>
           <TinyText>
             {tempo >= 1.0 ? '+' : '-'}
