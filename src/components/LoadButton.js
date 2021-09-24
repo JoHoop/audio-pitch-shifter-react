@@ -1,37 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { usePlayer } from './PlayerContext';
+import IconButton from '@mui/material/IconButton';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 import * as id3 from 'id3js';
 
 const Input = styled('input')({
   display: 'none',
 });
 
-const CoverImage = styled('div')({
-  width: 100,
-  height: 100,
-  objectFit: 'cover',
-  overflow: 'hidden',
-  flexShrink: 0,
-  borderRadius: 8,
-  position: 'relative',
-  backgroundColor: 'rgba(0,0,0,0.08)',
-  '& > img': {
-    maxHeight: '100%',
-    maxWidth: '100%',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    margin: 'auto',
-  },
-});
-
 export const LoadButton = () => {
   const { loadFile, setFileTags } = usePlayer();
-  const [cover, setCover] = useState('/logo.svg');
-  const onChange = ({
+  const handleUpload = ({
     target: {
       files: [file],
       value,
@@ -48,15 +28,19 @@ export const LoadButton = () => {
           const album = tags.album || 'Album';
           const year = tags.year || 'Year';
           const image = tags.images[0];
-          if (image && image.data) {
-            const blob = new Blob([image.data]);
-            const url = URL.createObjectURL(blob) || '/logo512.png';
-            setCover(url);
-          }
-          const fileTags = { title, artist, album, year };
+          const getCover = (img) => {
+            if (img && img.data) {
+              const blob = new Blob([img.data]);
+              return URL.createObjectURL(blob) || '/logo512.png';
+            }
+          };
+          const cover = getCover(image);
+          const fileTags = { title, artist, album, year, cover };
           setFileTags(fileTags);
         })
-        .catch((error) => {});
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       window.alert('Please upload files in .mp3 format only');
     }
@@ -67,12 +51,12 @@ export const LoadButton = () => {
         <Input
           type='file'
           accept='audio/*'
-          onChange={onChange}
+          onChange={handleUpload}
           id='upload-button'
         />
-        <CoverImage>
-          <img src={cover} alt='Upload audio file' />
-        </CoverImage>
+        <IconButton component='span'>
+          <FileUploadIcon />
+        </IconButton>
       </label>
     </Fragment>
   );

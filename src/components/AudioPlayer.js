@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LoadButton } from './LoadButton';
 import { usePlayer } from './PlayerContext';
 import { styled, useTheme } from '@mui/material/styles';
@@ -127,14 +127,37 @@ export const AudioPlayer = () => {
     mt: -2,
   };
 
+  const CoverImage = styled('div')({
+    width: 100,
+    height: 100,
+    objectFit: 'cover',
+    overflow: 'hidden',
+    flexShrink: 0,
+    borderRadius: 8,
+    position: 'relative',
+    backgroundColor: 'rgba(0,0,0,0.08)',
+    '& > img': {
+      maxHeight: '100%',
+      maxWidth: '100%',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      margin: 'auto',
+    },
+  });
+
   const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
 
   return (
     <Box sx={{ width: '100%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <LoadButton />
-          <Box sx={{ ml: 1.5, minWidth: 0 }}>
+          <CoverImage>
+            <img src={fileTags.cover} alt='Album cover' />
+          </CoverImage>
+          <Box sx={{ ml: 1.5, minWidth: 0, flex: 1 }}>
             <Typography
               variant='caption'
               color='text.secondary'
@@ -149,6 +172,7 @@ export const AudioPlayer = () => {
               {fileTags.album} ({fileTags.year})
             </Typography>
           </Box>
+          <LoadButton />
         </Box>
 
         <Slider

@@ -19,6 +19,7 @@ export const PlayerProvider = ({ audioCtx, gainNode, ...props }) => {
     artist: 'Artist',
     album: 'Album',
     year: 'Year',
+    cover: '/logo.svg',
   });
 
   const value = useMemo(
