@@ -17,33 +17,28 @@ export const LoadButton = () => {
       value,
     },
   }) => {
-    const fileTest = /(.mp3)$/i.test(value);
-    if (fileTest) {
-      loadFile(file);
-      id3
-        .fromFile(file)
-        .then((tags) => {
-          const title = tags.title || 'Title';
-          const artist = tags.artist || 'Artist';
-          const album = tags.album || 'Album';
-          const year = tags.year || 'Year';
-          const image = tags.images[0];
-          const getCover = (img) => {
-            if (img && img.data) {
-              const blob = new Blob([img.data]);
-              return URL.createObjectURL(blob) || '/logo512.png';
-            }
-          };
-          const cover = getCover(image);
-          const fileTags = { title, artist, album, year, cover };
-          setFileTags(fileTags);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      window.alert('Please upload files in .mp3 format only');
-    }
+    loadFile(file);
+    id3
+      .fromFile(file)
+      .then((tags) => {
+        const title = tags.title || 'Title';
+        const artist = tags.artist || 'Artist';
+        const album = tags.album || 'Album';
+        const year = tags.year || 'Year';
+        const image = tags.images[0];
+        const getCover = (img) => {
+          if (img && img.data) {
+            const blob = new Blob([img.data]);
+            return URL.createObjectURL(blob) || '/logo512.png';
+          }
+        };
+        const cover = getCover(image);
+        const fileTags = { title, artist, album, year, cover };
+        setFileTags(fileTags);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <Fragment>
