@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { styled } from '@mui/material/styles';
 import { usePlayer } from './PlayerContext';
 import IconButton from '@mui/material/IconButton';
@@ -24,7 +24,7 @@ export const LoadButton = () => {
         const title = tags.title || 'Title';
         const artist = tags.artist || 'Artist';
         const album = tags.album || 'Album';
-        const year = tags.year || 'Year';
+        const year = tags.year || new Date().getFullYear() || 'Year';
         const image = tags.images[0];
         const getCover = (img) => {
           if (img && img.data) {
