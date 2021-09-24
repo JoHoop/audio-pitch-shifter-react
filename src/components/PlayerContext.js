@@ -138,13 +138,14 @@ export const usePlayer = () => {
   };
 
   const loadFile = (file) => {
+    if (!file) return;
     setLoading(true);
     const fileReader = new FileReader();
     fileReader.onload = onLoad;
     try {
       fileReader.readAsArrayBuffer(file);
-    } catch (err) {
-      alert(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 
